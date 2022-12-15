@@ -20,5 +20,5 @@ from TCG_Interface.views import collection
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    path('/', collection)
+    path('', collection)
 ]
