@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Tailwind -->
+        <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+        
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+        <!-- Animate CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+        <!-- Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+        
+        <title> Website </title>
+        <link rel="shortcut icon" href="/static/logo.png" type="image/png" />
+
+
+
+
+
+        <style>
+            {% block hover %}
+            body:hover {
+                color: #8FE3CF;
+            }
+            {% endblock hover %}
+
+
+
+            {% block background %}
+            body {
+                background-color: black;
+            }
+            {% endblock background %}
+
+
+
+            {% block scrollbar %}
+            ::-webkit-scrollbar-thumb {
+                background: #1f2937; 
+            }
+            ::-webkit-scrollbar {
+                display: none;
+            }
+            *{
+                -ms-overflow-style: none; 
+                scrollbar-width: none; 
+            }
+            {% endblock scrollbar %}
+
+
+
+            {% block font %}
+            @font-face {
+                font-family: 'Clean';
+                src: url("/static/clean.ttf");
+            }
+            *{
+                font-family: Clean
+            }
+            {% endblock font %}
+            
+
+        </style>
+        <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+            <div class="container flex flex-wrap justify-between items-center mx-auto">
+                <a href="" class="flex items-center">
+                    <img src="/static/logo.png" class="mr-3 h-6 sm:h-9" alt="Logo" />
+                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">[Searchbar]</span>
+                </a>
+                <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                    <ul class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                        <li>
+                            {% block nav1 %} <a href="\"        class="block   py-2 pr-4 pl-3    text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" aria-current="page">Collection</a> {% endblock nav1 %}
+                        </li>
+                        <li>
+                            {% block nav2 %} <a href="\shop"    class="block   py-2 pr-4 pl-3   text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Shop</a>                            {% endblock nav2 %}
+                        </li>
+                        <li>
+                            {% block nav3 %} <a href="\trade"   class="block   py-2 pr-4 pl-3   text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Trade</a>                           {% endblock nav3 %}
+                        </li>
+                        <li>
+                            {% block nav4 %} <a href="\account" class="block   py-2 pr-4 pl-3   text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Account</a>                         {% endblock nav4 %}
+                        </li>
+                        <li>
+                            {% block nav pfp %} <img src="/static/logo.png" class="mr-3 h-6 sm:h-9" alt="Logo" /> {% endblock nav pfp %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </head>
+    <body> 
+        {% block content %}
+        {% endblock content %}
+    </body>
+</html>
