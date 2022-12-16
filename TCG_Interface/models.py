@@ -19,20 +19,23 @@ class User(models.Model):
     # Collection
     collection = ArrayField(
         ArrayField(
-            models.Field(), 
-                # Copies: [0 (not owned), 1 (owned)]
-                # Source: ['NaN' (not owned), 'trade_{str:username}', 'pack_{str:type}']
-                # Rank: {int:ranking}
-                # Uses: {int:games_played}
-                # Wins: {int:games_won}
+            models.Field(),     # Copies: [0 (not owned), 1 (owned)]
+                                # Source: ['NaN' (not owned), 'trade_{int:id}', 'pack_{str:type}']
+                                # Rank: {int:ranking}
+                                # Uses: {int:games_played}
+                                # Wins: {int:games_won}
             size = 5,
         ),
         size = 200
     ) 
     wishlist = ArrayField(
-        models.IntegerFiled(),
-            # ID
+        models.IntegerField(),  # ID   
         size = 5,
     )
       
-    # 
+
+
+
+
+class Card(models.Model):
+    token = models.CharField(max_length = 10)
