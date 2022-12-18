@@ -6,30 +6,29 @@ logged_in = False
 
 
 '''HOME PAGE'''
-# Parent function: display
-# Permissions:
-# Url: /
+# Parent function: collection
 
 def home(request):
-    return(render, 'home.html')
+    return(render(request, 'home.html'))
 
 
 
 
 
 '''ACCOUNT COLLECTION DISPLAY'''
-# Parent function: display
-# Permissions: logged_in
-# Url: /
+# Parent function: collection (itself)
+# URLS:  _  / (not logged in)
+#       |_  / (logged in)
+#       |_  /cards/{int:id} (logged in)
 
-def collection(request):
+def collection(request): # PARENT
     if logged_in == True:
-        collection___logged_in(request)
+        return(collection___logged_in(request))
     else:
-        home(request)
+        return(home(request))
 
 def collection___logged_in(request):
-    return(render, 'collection.html')
+    return(render(request, 'collection.html'))
 
 
 
