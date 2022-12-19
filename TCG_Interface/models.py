@@ -32,7 +32,7 @@ class User(models.Model):
         models.IntegerField(),  # ID   
         size = 5,
     )
-      
+
 
 
 

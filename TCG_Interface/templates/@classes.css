@@ -1,3 +1,5 @@
+{% comment %} Gradient BG {% endcomment %}
+
 .animated-gradient {
     background: repeating-linear-gradient(to right, red 0%, blue 50%, red 100%);
     width: 100%;
@@ -13,3 +15,26 @@
     100% { background-position: -200% 0; }
 }
 
+
+
+
+
+{% comment %} Card Animation {% endcomment %}
+
+.card
+{
+    aspect-ratio: 5 / 7;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.big-card
+{
+    width: 30vmin;
+    broder-radius: 1vmin;
+}
+
+.small-card
+{
+    width: 12vmin; 
+    border-radius: 2vmin;
+}
