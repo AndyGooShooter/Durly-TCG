@@ -74,6 +74,30 @@
                 src: url("{% static '/fonts/brandon.ttf' %}");
             }
             {% endblock font %}
+
+            .hover-underline-animation {
+                display: inline-block;
+                position: relative;
+                color: #fff019;
+              }
+              
+              .hover-underline-animation::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: #fff019;
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out;
+              }
+              
+              .hover-underline-animation:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+              }
         </style> 
 
 
@@ -84,7 +108,7 @@
         <nav class="bg-black">
         </nav>
 
-        <nav class="px-2 sm:px-2 py-0.5       bg-black">
+        <nav class="mx-2 sm:px-2 py-2       bg-black">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
 
             <!-- Logo -->
@@ -94,26 +118,26 @@
             </a>
 
             <!-- Collapse -->
-            <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-white rounded-lg md:hidden bg-black" aria-controls="navbar-default" aria-expanded="false">
+            <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm font-thin text-white rounded-lg md:hidden bg-black" aria-controls="navbar-default" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
                 <svg class="w-6 h-6 text-white" aria-hidden="true" fill = "white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
             </button>
-
+            
             <!-- Elements -->
             <div class="hidden w-full md:block md:w-auto" id="navbar-default">
 
             <ul class="flex flex-col p-4 mt-4       bg-black  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
                 <li>
-                    {% block nav1 %} <a href="\"                class="block   py-2 pr-4 pl-4   md:p-1 rounded  text-white hover:text-[#fff019]">Collection</a> {% endblock nav1 %}
+                    {% block nav1 %} <a href="\"                class="block hover-underline-animation   py-2 pr-4 pl-4   md:p-1 rounded  text-white hover:text-[#fff019]">Collection</a> {% endblock nav1 %}
                 </li>
                 <li>
-                    {% block nav2 %} <a href="\shop"            class="block   py-2 pr-4 pl-4   md:p-1 rounded  text-white hover:text-[#fff019]">Shop</a>                           {% endblock nav2 %}
+                    {% block nav2 %} <a href="\shop"            class="block hover-underline-animation   py-2 pr-4 pl-4   md:p-1 rounded  text-white hover:text-[#fff019]">Shop</a>                           {% endblock nav2 %}
                 </li>
                 <li>
-                    {% block nav3 %} <a href="\trade"           class="block   py-2 pr-4 pl-4   md:p-1 rounded  text-white hover:text-[#fff019]">Trade</a>                          {% endblock nav3 %}
+                    {% block nav3 %} <a href="\trade"           class="block hover-underline-animation   py-2 pr-4 pl-4   md:p-1 rounded  text-white hover:text-[#fff019]">Trade</a>                          {% endblock nav3 %}
                 </li>
                 <li>
-                    {% block nav4 %} <a href="\leaderboards"    class="block   py-2 pr-4 pl-4   md:p-1 rounded  text-white hover:text-[#fff019]">Leaderboards</a>                   {% endblock nav4 %}
+                    {% block nav4 %} <a href="\leaderboards"    class="block hover-underline-animation   py-2 pr-4 pl-4   md:p-1 rounded  text-white hover:text-[#fff019]">Leaderboards</a>                   {% endblock nav4 %}
                 </li>
                 {% block nav_account %}
                 <li class = "                                          block   py-2 pr-4 pl-4   md:p-1 rounded  text-white hover:text-[#fff019]">
