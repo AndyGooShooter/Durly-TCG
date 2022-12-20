@@ -9,7 +9,7 @@ class User(models.Model):
     
     # Credentials
     username = models.CharField(max_length = 128)
-    hased_password = models.CharField(max_length = 2048)
+    hashed_password = models.CharField(max_length = 2048)
     email = models.EmailField()
 
     # Account Info
@@ -19,11 +19,22 @@ class User(models.Model):
     # Collection
     collection = ArrayField(
         ArrayField(
-            models.Field(),     # Copies: [0 (not owned), 1 (owned)]
-                                # Source: ['NaN' (not owned), 'trade_{int:id}', 'pack_{str:type}']
-                                # Rank: {int:ranking}
-                                # Uses: {int:games_played}
-                                # Wins: {int:games_won}
+            models.IntegerField(),    
+                                    # Copies: {int:copies}
+                                    
+                                    # Source: {int:source}      first digit = 0 --> Trad; id of player
+                                    #                           first digit = 1 --> Pack; type of pack
+                                
+                                    #                           examples:
+                                    #                           1780, from player 178
+                                    #                           21, from pack type 2 (weekly)
+                                
+                                    # Rank: {int:ranking}
+                                    # Uses: {int:games_played}
+                                    # Wins: {int:games_won}
+                                    
+                                    # Border: {int:border}      0 for none, 
+                                    #                           1 for Crystal,
             size = 5,
         ),
         size = 200
@@ -38,4 +49,11 @@ class User(models.Model):
 
 
 class Card(models.Model):
+    
     token = models.CharField(max_length = 10)
+    rarity = models.IntegerField()
+    
+    text = models.CharField(max_length=4096)
+    cover = models.ImageField()
+    
+    
