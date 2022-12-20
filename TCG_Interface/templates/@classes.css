@@ -1,4 +1,4 @@
-{% comment %} Gradient BG {% endcomment %}
+<!-- Gradient BG -->
 
 .animated-gradient {
     background: repeating-linear-gradient(to right, red 0%, blue 50%, red 100%);
@@ -19,7 +19,7 @@
 
 
 
-{% comment %} Card Animation {% endcomment %}
+<!-- Card Animation --> 
 
 .card
 {
@@ -38,3 +38,5 @@
     width: 12vmin; 
     border-radius: 2vmin;
 }
+
+
