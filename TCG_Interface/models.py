@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
+import json
 
 
 
@@ -17,32 +18,22 @@ class User(models.Model):
     pfp = models.ImageField()
     
     # Collection
-    collection = ArrayField(
-        ArrayField(
-            models.IntegerField(),    
-                                    # Copies: {int:copies}
-                                    
-                                    # Source: {int:source}      first digit = 0 --> Trad; id of player
-                                    #                           first digit = 1 --> Pack; type of pack
-                                
-                                    #                           examples:
-                                    #                           1780, from player 178
-                                    #                           21, from pack type 2 (weekly)
-                                
-                                    # Rank: {int:ranking}
-                                    # Uses: {int:games_played}
-                                    # Wins: {int:games_won}
-                                    
-                                    # Border: {int:border}      0 for none, 
-                                    #                           1 for Crystal,
-            size = 5,
-        ),
-        size = 200
-    ) 
-    wishlist = ArrayField(
-        models.IntegerField(),  # ID   
-        size = 5,
-    )
+    collection = models.JSONField(default='null')
+        # Copies: {int:copies}
+        
+        # Source: {int:source}      first digit = 0 --> Trade; id of player
+        #                           first digit = 1 --> Pack; type of pack
+    
+        #                           examples:
+        #                           1780, from player with the id 178
+        #                           21, from pack type 2 (weekly)
+    
+        # Rank: {int:ranking}
+        # Uses: {int:games_played}
+        # Wins: {int:games_won}
+        
+        # Border: {int:border}      0 for none, 
+        #                           1 for Crystal,
 
 
 
