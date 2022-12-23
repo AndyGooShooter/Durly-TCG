@@ -25,8 +25,8 @@
         {% load static %}
 
         <!-- Header -->
-        <title> Website </title>
-        <link rel="shortcut icon" href="/static/logo.png" type="image/png" />
+        <title> FTCards </title>
+        <link rel="shortcut icon" href="{% static '/assets/favicon.png' %}" type="image/png" />
 
 
 
@@ -75,10 +75,17 @@
             }
             {% endblock font %}
 
+
+
+            body {
+                -webkit-user-select: none; /* Safari */
+                -ms-user-select: none; /* IE 10 and IE 11 */
+                user-select: none; /* Standard syntax */
+              }
+
             .hover-underline-animation {
                 display: inline-block;
                 position: relative;
-                color: #fff019;
               }
               
               .hover-underline-animation::after {
@@ -89,7 +96,7 @@
                 height: 2px;
                 bottom: 0;
                 left: 0;
-                background-color: #fff019;
+                background-color: #03ffff;
                 transform-origin: bottom right;
                 transition: transform 0.25s ease-out;
               }
@@ -104,10 +111,9 @@
 
 
 
-        <!-- Navbar -->
-        <nav class="bg-black">
-        </nav>
+        {% block navbar %}
 
+        <!-- Navbar -->
         <nav class="mx-2 sm:px-2 py-2       bg-black">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
 
@@ -128,16 +134,16 @@
 
             <ul class="flex flex-col p-4 mt-4       bg-black  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
                 <li>
-                    {% block nav1 %} <a href="\"                class="block hover-underline-animation   py-2 pr-4 pl-4   md:p-1 rounded  text-white hover:text-[#fff019]">Collection</a> {% endblock nav1 %}
+                    {% block nav1 %} <a href="\"                class="block hover-underline-animation   py-2 pr-4 pl-4   md:p-1 rounded  text-white hover:text-[#03ffff]">Collection</a> {% endblock nav1 %}
                 </li>
                 <li>
-                    {% block nav2 %} <a href="\shop"            class="block hover-underline-animation   py-2 pr-4 pl-4   md:p-1 rounded  text-white hover:text-[#fff019]">Shop</a>                           {% endblock nav2 %}
+                    {% block nav2 %} <a href="\shop"            class="block hover-underline-animation   py-2 pr-4 pl-4   md:p-1 rounded  text-white hover:text-[#03ffff]">Shop</a>                           {% endblock nav2 %}
                 </li>
                 <li>
-                    {% block nav3 %} <a href="\trade"           class="block hover-underline-animation   py-2 pr-4 pl-4   md:p-1 rounded  text-white hover:text-[#fff019]">Trade</a>                          {% endblock nav3 %}
+                    {% block nav3 %} <a href="\trade"           class="block hover-underline-animation   py-2 pr-4 pl-4   md:p-1 rounded  text-white hover:text-[#03ffff]">Trade</a>                          {% endblock nav3 %}
                 </li>
                 <li>
-                    {% block nav4 %} <a href="\leaderboards"    class="block hover-underline-animation   py-2 pr-4 pl-4   md:p-1 rounded  text-white hover:text-[#fff019]">Leaderboards</a>                   {% endblock nav4 %}
+                    {% block nav4 %} <a href="\leaderboards"    class="block hover-underline-animation   py-2 pr-4 pl-4   md:p-1 rounded  text-white hover:text-[#03ffff]">Leaderboards</a>                   {% endblock nav4 %}
                 </li>
                 {% block nav_account %}
                 <li class = "                                          block   py-2 pr-4 pl-4   md:p-1 rounded  text-white hover:text-[#fff019]">
@@ -145,19 +151,19 @@
                     <img src="{% static '/assets/pfp.png' %}" style = "border-radius: 50%" class="align-middle mr-2 h-6 sm:h-6 float-left" alt="Pfp"><svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
                         
                     <!-- Dropdown menu -->
-                    <div id="dropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
-                        <ul class="py-1 text-sm text-black dark:text-gray-200" aria-labelledby="dropdownDefault">
+                    <div id="dropdown" class="hidden z-10 w-44 rounded divide-y divide-gray-100 shadow bg-gray-700 text-white">
+                        <ul class="py-1 text-sm" aria-labelledby="dropdownDefault">
                             <li>
-                            <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                            <a href="#" class="block py-2 px-4 text-white hover:bg-gray-600 hover:text-white">Profile</a>
                             </li>
                             <li>
-                            <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                            <a href="#" class="block py-2 px-4 text-white hover:bg-gray-600 hover:text-white">Settings</a>
                             </li>
                             <li>
-                            <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                            <a href="#" class="block py-2 px-4 text-white hover:bg-gray-600 hover:text-white">Earnings</a>
                             </li>
-                            <li>
-                            <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+                            <li class="flex hover:bg-red-400 text-white text-xs">
+                                <i class="text-white py-2 ml-4 mr-1 my-auto fa fa-sign-out" aria-hidden="true"></i> <a href="#" class="block py-2 ">Sign out</a>
                             </li>
                         </ul>
                     </div>
@@ -172,6 +178,8 @@
 
         </div>
         </nav>
+
+        {% endblock navbar %}
 
     </head>
     <body> 

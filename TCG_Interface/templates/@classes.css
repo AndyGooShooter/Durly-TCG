@@ -48,7 +48,7 @@
 .hover-underline-animation {
     display: inline-block;
     position: relative;
-    color: #fff019;
+    color: #33cccc;
   }
   
   .hover-underline-animation::after {
@@ -59,7 +59,7 @@
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #0087ca;
+    background-color: #33cccc;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
   }
@@ -67,4 +67,21 @@
   .hover-underline-animation:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+  }
+
+
+
+
+  <!-- Color Clip Hover --> 
+
+  .color-clip-hover {
+    background: 
+      linear-gradient(90deg,#1095c1 50%,#000 0) 
+      var(--_p,100%)/200% no-repeat;
+    -webkit-background-clip: text;
+            background-clip: text;
+    transition: .4s;
+  }
+  .color-clip-hover:hover {
+    --_p: 0%;
   }

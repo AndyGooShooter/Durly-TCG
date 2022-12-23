@@ -1,5 +1,107 @@
 {% extends '@base.html' %}
+<!-- Loads -->
+{% load static %}
+
+{% comment %} {% block nav1 %}
+{% endblock nav1 %}
+
+{% block nav2 %}
+{% endblock nav2 %}
+
+{% block nav3 %}
+{% endblock nav3 %}
+
+{% block nav4 %}
+{% endblock nav4 %}
+
+{% block nav_account %}
+{% endblock nav_account %} {% endcomment %}
+
+{% block navbar %}
+<!-- Navbar -->
+<nav class="mx-2 sm:px-2 py-2       bg-black">
+<div class="container flex flex-wrap justify-between items-center mx-auto">
+
+    <!-- Logo -->
+    <a href="" class="flex items-center">
+        <img src="{% static '/assets/logo.png' %}" class="mr-3 h-6 sm:h-9">
+        <span class="self-center text-xl font-semibold whitespace-nowrap text-white"> FTCards</span>
+    </a>
+</div>
+</nav>
+{% endblock navbar %}
 
 {% block content %}
+
+<style>
+    button {
+        transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    }
+    button:hover {
+        box-shadow: inset 300px 0 0 0 black;
+        color: #03ffff;
+    }
     
+
+
+    .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+    }
+    
+    .hover-underline-animation::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #03ffff;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+    
+    .hover-underline-animation:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+</style>
+
+<div class="px-8 pt-8 max-w-xl items-center">
+    {% comment %} <img src="{% static '/assets/logo.png' %}" class="mx-auto sm:h-28"> {% endcomment %}
+    <span class="mx-auto self-center text-2xl font-semibold whitespace-nowrap text-white"> Create a new account</span>
+    <p class="mx-auto self-center text-md font-semibold whitespace-nowrap text-gray-400"> Already have one? <a href="/login" class="text-gray-400 hover:text-[#03ffff] hover-underline-animation"> Log in.</a> </p>
+</div>
+
+<div class="px-8 pt-6" style="max-width: 28rem;">
+<form autocomplete="off">
+
+    <div class="mb-6">
+        <label for="email"          class="block mb-2 text-sm font-medium text-white">Email</label>
+        <input type="email" id="email"                class="shadow-sm text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500 shadow-sm-light" placeholder="name@email.com" required>
+    </div>
+    <div class="mb-6">
+        <label for="username"       class="block mb-2 text-sm font-medium text-white">Username</label>
+        <input type="text" id="username"              class="shadow-sm text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500 shadow-sm-light" required>
+    </div>
+    <div class='flex'>
+        <div class="mb-6 pr-10" style="max-width: 40rem;">
+            <label for="password"       class="block mb-2 text-sm font-medium text-white">Password</label>
+            <input type="password" id="password"          class="shadow-sm text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500 shadow-sm-light" required>
+        </div>
+        <div class="mb-6" style="max-width: 40rem;">
+            <label for="repeat-password" class="block mb-2 text-sm font-medium text-white">Repeat password</label>
+            <input type="password" id="repeat-password"   class="shadow-sm text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500 shadow-sm-light" required>
+        </div>
+    </div>
+    <div class="flex items-start mb-6">
+        <div class="flex items-center h-5">
+            <input id="terms" type="checkbox" value="" class="w-4 h-4 bg-gray-700 border-gray-600" required>
+        </div>
+        <label for="terms" class="ml-2 text-sm font-medium text-gray-300">I agree with the <a href="#" class="text-white hover:text-[#03ffff] hover-underline-animation">terms and conditions</a></label>
+    </div>
+    <button type="submit" class="font-medium rounded-lg text-xl px-5 py-2.5 my-8 text-center text-white bg-gray-700 hover-underline-animation">Register new account</button>
+</form>
+</div>
 {% endblock content %}

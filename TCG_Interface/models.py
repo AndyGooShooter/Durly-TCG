@@ -4,7 +4,7 @@ import json
 
 
 
-
+lol = 1
 
 class User(models.Model):
     
@@ -12,13 +12,14 @@ class User(models.Model):
     username = models.CharField(max_length = 128)
     hashed_password = models.CharField(max_length = 2048)
     email = models.EmailField()
+    token = models.CharField(max_length = 128, default='')
 
     # Account Info
     display_name = models.CharField(max_length = 64)
     pfp = models.ImageField()
     
     # Collection
-    collection = models.JSONField(default='null')
+    collection = models.JSONField(default='')
         # Copies: {int:copies}
         
         # Source: {int:source}      first digit = 0 --> Trade; id of player

@@ -18,9 +18,13 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from TCG_Interface.views import collection
+from TCG_Interface.views import collection_PARENT, login_PARENT, register_PARENT
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    path('', collection)
+    path('', collection_PARENT),
+    path('login', login_PARENT),
+    path('register', register_PARENT),
+    
+    
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
