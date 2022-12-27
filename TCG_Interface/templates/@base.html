@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html>
     <head>
         <!-- Required meta tags -->
@@ -36,6 +37,7 @@
         <style>
             {% block hover %}
             {% endblock hover %}
+            
 
             {% block text %}
             *{ 
@@ -43,15 +45,29 @@
             }
             {% endblock text %}
 
-
-
+            {% block swiper %}
+                @layer utilities {
+                    .snap {
+                        scroll-snap-type: var(--scroll-snap-direction) var(--scroll-snap-constraint);
+                    }
+                    .snap-y {
+                        --scroll-snap-direction: y;
+                    }
+                    .snap-mandatory {
+                        --scroll-snap-constraint: mandatory;
+                    }
+                    .snap-start {
+                        scroll-snap-align: start;
+                        duration: 0.5s;
+                    }
+                }   
+            {% endblock swiper %}
+            
             {% block background %}
             body {
                 background-color: black;
             }
             {% endblock background %}
-
-
 
             {% block scrollbar %}
             ::-webkit-scrollbar-thumb {

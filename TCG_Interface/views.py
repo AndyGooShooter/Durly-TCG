@@ -36,7 +36,12 @@ def card(request):
     return(render(request, 'card.html'))
 
 
+''' NEWSLETTER '''
+def newsletter(request):
+    return(render(request, 'newsletter.html'))
 
+def newsletter_PARENT(request):
+    return(newsletter(request))
 
 
 '''ACCOUNT'''
