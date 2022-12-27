@@ -1,0 +1,109 @@
+<!-- Extenders -->
+{% extends '@base.html' %}
+
+<!-- Loads -->
+{% load static %}
+
+<!-- Content -->
+{% block content %}
+<main class="max-h-screen overflow-y-scroll snap snap-y snap-mandatory">
+    <section class="w-full h-screen snap-start">
+        <div class="card-group">
+            <div class="card">
+                
+            </div>
+            
+            <div class="card">
+                
+            </div>
+            
+            <div class="card">
+                
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="w-full h-screen snap-start">
+        
+        <div class="form-newsletter px-8 pt-6" style="max-width: 28rem;">
+            
+            <form autocomplete="off">
+                
+                <div class="mb-6">
+                    <label for="email"                                class="block mb-2 text-sm font-medium text-white">
+                        <i class="text-white mr-1 fa fa-envelope" aria-hidden="true"></i>
+                        Email
+                    </label>
+                    <input type="email" id="email"                    class="shadow-sm text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500 shadow-sm-light" placeholder="name@email.com" required>
+                    
+                </div>
+                
+                <button type="submit" class="font-medium rounded-lg text-yl px-5 py-2.5 text-center text-white bg-red-500 hover:animate-pulse flex space-x-4 transition hover:bg-gray-700 duration-500">Subscribe</button>
+            </form>
+            
+            
+        </div>
+
+        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+            
+        </div>
+        
+    </section>        
+    
+</main>
+
+<style>
+    .card-group,
+    .card{  
+        width: 30vmin;
+    }
+    .card-group{
+        width:30vmin;
+        justify-content: center;
+        place-content: center;
+    }
+    .card{
+        aspect-ratio: 5 / 7;
+        margin-top: 120px;
+        padding-top: 32px;
+        margin-left: 77vh;
+        width:30vmin;
+        justify-content: center;
+        place-content: center;
+        bacground-color: rgba(255, 255, 255, 0.01);
+        border-radius: 1vmin;
+        position: absolute;
+        transition: transform 800ms cubic-bezier(.05,.43,.25,.95);
+    }
+    .card:nth-child(1)
+    {
+        background-image: url("https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80");
+        transform: translateX(-10%) rotate(-1deg);
+    }
+    .card:nth-child(2)
+    {
+        background-image: url("https://images.unsplash.com/photo-1471879832106-c7ab9e0cee23?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80");
+        transform: rotate(2deg);
+    }
+    .card:nth-child(3)
+    {
+        background-image: url("https://images.pexels.com/photos/3244513/pexels-photo-3244513.jpeg");
+        transform: translateX(-6%) rotate(-3deg);
+    }
+
+    .card-group:hover > .card:nth-child(1) 
+    {
+        transform: translateX(-75%, 16%), rotate(-24deg);
+    }
+    .card-group:hover > .card:nth-child(2) 
+    {
+        transform: translateX(-25%, 8%), rotate(-8deg);
+    }
+    .card-group:hover > .card:nth-child(3) 
+    {
+        transform: translateX(25%, 8%), rotate(24deg);
+    }
+</style>
+
+{% endblock content %}
